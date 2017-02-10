@@ -10,7 +10,7 @@
         android:layout_above="@+id/btnStartMatch"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
-        android:text="App Name and Logo"
+        android:text="@string/app_name"
         android:textSize="50sp"
         android:gravity="center"/>
     <Button
@@ -19,7 +19,7 @@
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="New Match"
+        android:text="@string/newMatchButtonText"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
@@ -28,5 +28,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Authors/Company Name"/>
+        android:text="@string/appCreators"/>
 </RelativeLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Volleyball</string>
+    <string name="newMatchButtonText">New Match</string>
+    <string name="appCreators">Authors/Company Name</string>
+    <string name="pointButtonText">POINT</string>
+    <string name="awayLabelText">AWAY</string>
+    <string name="homeLabelText">HOME</string>
+    <string name="undoButtonText">Undo</string>
 </resources>

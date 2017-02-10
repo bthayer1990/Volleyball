@@ -17,7 +17,7 @@
         android:layout_alignParentStart="true"
         android:id="@+id/grdAwayBench"
         android:columnCount="4"
-        android:background="#e6e6e6 ">
+        android:background="#e6e6e6">
 
         <Button
             android:text="7"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp"/>
         <Button
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="2"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
 
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="1"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="2"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="3"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
 
@@ -90,14 +90,14 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="3"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
 
     </GridLayout>
 
     <Button
-        android:text="Undo"
+        android:text="@string/undoButtonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnUndo"
@@ -110,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/courtLayout"
         android:layout_centerHorizontal="true"
-        android:text="AWAY"
+        android:text="@string/awayLabelText"
         android:textSize="24sp" />
 
     <RelativeLayout
@@ -130,10 +130,10 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:layout_alignParenLeft="true"
+            android:layout_alignParentStart="true"
             android:id="@+id/grdAwayCourt"
             android:columnCount="3"
-            android:background="@drawable/courtBackground">
+            android:background="@drawable/court_background">
 
             <Button
                 android:text="1"
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="0"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp"/>
             <Button
@@ -150,25 +150,17 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="1"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
-            <Button
-                android:text="3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="2"
-                android:background="@drawable/roundCourtButton"
-                android:textColor="@android:color/white"
-                android:layout_margin="3dp" />
+
             <Button
                 android:text="6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="0"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -177,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -186,7 +178,17 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="2"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
+                android:textColor="@android:color/white"
+                android:layout_margin="3dp" />
+
+            <Button
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
 
@@ -199,11 +201,11 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:layout_alignParenLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_below="@id/grdAwayCourt"
             android:id="@+id/grdHomeCourt"
             android:columnCount="3"
-            android:background="@drawable/courtBackground">
+            android:background="@drawable/court_background">
 
             <Button
                 android:text="4"
@@ -211,7 +213,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="0"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp"/>
             <Button
@@ -220,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="1"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -229,7 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="2"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -238,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="0"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -247,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
             <Button
@@ -256,7 +258,7 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="2"
-                android:background="@drawable/roundCourtButton"
+                android:background="@drawable/btn_court"
                 android:textColor="@android:color/white"
                 android:layout_margin="3dp" />
 
@@ -269,40 +271,39 @@
             android:id="@+id/txtAwayScore"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/scoreBackground"
+            android:background="@drawable/score_background"
             android:textSize="70sp"
             android:gravity="center"/>
         <Button
-            android:text="POINT"
+            android:text="@string/pointButtonText"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_below="@+id/txtAwayScore"
             android:layout_alignStart="@+id/txtHomeScore"
             android:id="@+id/btnAwayPoint"
             android:layout_alignParentEnd="true"
-            android:background="#00b359 "
+            android:background="#00b359"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:text="TextView"
+            android:text="5"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/txtHomeScore"
             android:layout_below="@+id/grdAwayCourt"
             android:layout_alignParentRight="true"
-            android:background="@drawable/scoreBackground"
+            android:background="@drawable/score_background"
             android:textSize="70sp"
-            android:gravity="center"
-            tools:text="5" />
+            android:gravity="center" />
         <Button
-            android:text="POINT"
+            android:text="@string/pointButtonText"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_below="@+id/txtHomeScore"
             android:layout_alignStart="@+id/txtHomeScore"
             android:id="@+id/btnHomePoint"
             android:layout_alignParentEnd="true"
-            android:background="#00b359 "
+            android:background="#00b359"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>
@@ -313,7 +314,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/courtLayout"
         android:layout_centerHorizontal="true"
-        android:text="HOME"
+        android:text="@string/homeLabelText"
         android:textSize="24sp" />
 
     <GridLayout
@@ -323,7 +324,7 @@
         android:layout_alignParentLeft="true"
         android:id="@+id/grdHomeBench"
         android:columnCount="4"
-        android:background="#e6e6e6 ">
+        android:background="#e6e6e6">
 
         <Button
             android:text="7"
@@ -331,7 +332,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp"/>
         <Button
@@ -340,7 +341,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -349,7 +350,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="2"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -358,7 +359,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="3"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -367,7 +368,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -376,7 +377,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="1"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -385,7 +386,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="2"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
         <Button
@@ -394,7 +395,7 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="3"
-            android:background="@drawable/roundBenchButton"
+            android:background="@drawable/btn_bench"
             android:textColor="@android:color/white"
             android:layout_margin="3dp" />
 
