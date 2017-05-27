@@ -14,24 +14,31 @@ public class Game {
     private Possession possession = Possession.HOME;
     private final Map<Position, Player> playerMap = new HashMap<>();
     private boolean started = false, ended = false;
+    private final int WINNING_SCORE = 21;
 
-    /* A game is in progress if it has started and no team has won,
-        winning does not occur until 21 points but a game must be won by
-        two ie 21-19, 22-20, 24-22
-     */
-    public boolean inProgress() { return started; }
+    public boolean inProgress() {
+        return (started == true && ended == false);
+    }
 
     //games at lower levels are timed so there needs to be a mechanism to end the game
-    public void endGame() { started = false; ended = true; }
+    public void endGame() { ended = true; }
 
     public void startGame() { if(!inProgress()) { started = true; } }
 
     public void homePointScored() {
         if(inProgress()) { ++homeScore; }
+
+        if(gameIsWon(homeScore, awayScore)){
+            endGame();
+        }
     }
 
     public void awayPointScored() {
         if(inProgress()) { ++awayScore; }
+
+        if(gameIsWon(awayScore, homeScore)){
+            endGame();
+        }
     }
 
     public int getHomeScore() {
@@ -53,5 +60,13 @@ public class Game {
 
     public Map<Position, Player> getPlayerMap() {
         return Collections.unmodifiableMap(playerMap);
+    }
+
+    private boolean gameIsWon(int thisScore, int otherScore){
+        return thisScore >= WINNING_SCORE && pointDifferenceIsTwoOrMore(thisScore, otherScore);
+    }
+
+    private boolean pointDifferenceIsTwoOrMore(int thisScore, int otherScore){
+        return (thisScore - otherScore) >= 2;
     }
 }
