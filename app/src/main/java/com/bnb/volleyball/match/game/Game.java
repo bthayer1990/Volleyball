@@ -2,19 +2,23 @@ package com.bnb.volleyball.match.game;
 
 import com.bnb.volleyball.Position;
 import com.bnb.volleyball.Possession;
+import com.bnb.volleyball.match.game.state.GameState;
 import com.bnb.volleyball.player.Player;
+import com.bnb.volleyball.player.Positions;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class Game {
 
-    private int homeScore = 0, awayScore = 0;
     private Possession possession = Possession.HOME;
     private final Map<Position, Player> playerMap = new HashMap<>();
     private boolean started = false, ended = false;
     private final int WINNING_SCORE = 21;
+
+    private final Stack<GameState> gameStates = new Stack<>();
 
     public boolean inProgress() {
         return (started == true && ended == false);
@@ -26,27 +30,34 @@ public class Game {
     public void startGame() { if(!inProgress()) { started = true; } }
 
     public void homePointScored() {
-        if(inProgress()) { ++homeScore; }
-
-        if(gameIsWon(homeScore, awayScore)){
-            endGame();
+        if(inProgress()) {
+            final GameState current = current();
+            gameStates.push(newGameState(current.getHomeScore() + 1, current.getAwayScore(),
+                    possession == Possession.HOME ? possession : Possession.AWAY, null));
+            if(gameIsWon(current.getHomeScore(), current.getAwayScore())){
+                endGame();
+            }
         }
     }
 
     public void awayPointScored() {
-        if(inProgress()) { ++awayScore; }
+        if(inProgress()) {
+            final GameState current = current();
+            gameStates.push(newGameState(current.getHomeScore(), current.getAwayScore() + 1,
+                    possession == Possession.AWAY ? possession : Possession.HOME, null));
 
-        if(gameIsWon(awayScore, homeScore)){
-            endGame();
+            if(gameIsWon(current.getHomeScore(), current.getAwayScore())){
+                endGame();
+            }
         }
     }
 
     public int getHomeScore() {
-        return homeScore;
+        return current().getHomeScore();
     }
 
     public int getAwayScore() {
-        return awayScore;
+        return current().getAwayScore();
     }
 
     public void setPlayerPosition(final Position position, final Player player) {
@@ -68,5 +79,15 @@ public class Game {
 
     private boolean pointDifferenceIsTwoOrMore(int thisScore, int otherScore){
         return (thisScore - otherScore) >= 2;
+    }
+
+    private GameState newGameState(final int homeScore, final int awayScore,
+                                   final Possession possession,
+                                   final Positions positions) {
+        return new GameState(homeScore, awayScore, possession, positions);
+    }
+
+    private GameState current() {
+        return gameStates.empty() ? GameState.EMPTY : gameStates.peek();
     }
 }
